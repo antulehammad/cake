@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="cake.css">
+</head>
+<body>
+     <!-- Loading Animation -->
+     <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#cupcakes">cupcakes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <h1>Welcome to Our Cake Shop</h1>
+        <p>Delicious cakes made with love!</p>
+    </section>
+
+    <section id="cupcakes" class="section">
+        <h2>Our Cupcakes</h2>
+        <div class="cupcakes-container">
+            <div class="cupcake"></div>
+            <div class="cupcake"></div>
+            <div class="cupcake"></div>
+            <div class="cupcake"></div>
+            <div class="cupcake"></div>
+            <div class="cupcake"></div>
+        </div>
+    </section>
+
+    <section id="shop" class="section">
+        <h2>Shop</h2>
+        <div class="shop-container">
+            <div class="shop-item">
+                <img src="cake1.avif" alt="Cake 1">
+                <div class="price">$20.00</div>
+                <a href="#" class="shop-now">Shop Now</a>
+            </div>
+            <div class="shop-item">
+                <img src="cake2.avif" alt="Cake 2">
+                <div class="price">$25.00</div>
+                <a href="#" class="shop-now">Shop Now</a>
+            </div>
+            <div class="shop-item">
+                <img src="cake4.jpg" alt="Cake 3">
+                <div class="price">$30.00</div>
+                <a href="#" class="shop-now">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>We offer a wide variety of cakes, from classic flavors to unique creations. Our cakes are made with the finest ingredients and a lot of love.</p>
+    </section>
+
+
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Link to the JavaScript file -->
+    <script src="cake.js"></script>
+</body>
+</html>
