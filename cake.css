@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #fff5e6;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #f8b400;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s ease-in-out;
+}
+
+header.scrolled {
+    background-color: #e67e22;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+/* Section Styles */
+.section {
+    padding: 6em 2em 2em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.section:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Keyframes for Section Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home {
+    background: url('cake1.avif') no-repeat center center/cover;
+    color: #151414;
+    padding: 8em 2em;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Shop Styles */
+#shop .shop-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+
+#shop .shop-item {
+    position: relative;
+    margin: 1em;
+    width: 300px;
+    height: 250px; /* Adjusted height to fit the button */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#shop .shop-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#shop .shop-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Price */
+#shop .shop-item .price {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Shop Now Button */
+#shop .shop-item .shop-now {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8b400;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+#shop .shop-item .shop-now:hover {
+    background-color: #e67e22;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Cupcakes Section */
+#cupcakes .cupcakes-container {
+    position: relative;
+    width: 500px; /* Increased width to accommodate bigger cupcakes */
+    height: 500px; /* Increased height to accommodate bigger cupcakes */
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.cupcake {
+    width: 110px; /* Increased size */
+    height: 110px; /* Increased size */
+    background: url('cake4.jpg') no-repeat center center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+/* Positioning the cupcakes in a circular layout */
+.cupcake:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
+}
+.cupcake:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(60deg) translate(200px) rotate(-60deg);
+}
+.cupcake:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(120deg) translate(200px) rotate(-120deg);
+}
+.cupcake:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(180deg) translate(200px) rotate(-180deg);
+}
+.cupcake:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(240deg) translate(200px) rotate(-240deg);
+}
+.cupcake:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(300deg) translate(200px) rotate(-300deg);
+}
+
+/* Hover Animation */
+#cupcakes .cupcakes-container:hover .cupcake {
+    animation: rotateCupcakes 7s linear infinite; /* Slower rotation speed */
+}
+
+@keyframes rotateCupcakes {
+    from {
+        transform: rotate(0deg) translate(200px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(200px) rotate(-360deg);
+    }
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+form label, form input, form textarea {
+    margin: 0.5em 0;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #f8b400;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8b400;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loader Animation */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #f8b400; /* Orange */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 1em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
